@@ -6,7 +6,7 @@
 
 Podeís descargarlo con la url: `git clone https://github.com/Jmoro-ribera/eactabackend.git` o si tenéis un clave ssh protegida con contraseña en gitHub: `git clone git@github.com:Jmoro-ribera/eactabackend.git`
 
-### Base de Datos
+## Base de Datos
 
 La carpeta con los datos de la base de datos se encuentran en `src/main/resources`.
 
