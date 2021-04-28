@@ -10,7 +10,7 @@ Podeís descargarlo con la url: `git clone https://github.com/Jmoro-ribera/eacta
 
 La carpeta con los datos de la base de datos se encuentran en `src/main/resources`.
 
-**Recordad**
+**Seguid los siguientes pasos**
 
 1. Tenéis que sacar la carpeta de ahí y colocarla dónde creáis conveniente.
 1. **Cambiad** la dirección de la carpeta en `src/main/resources/aplication.properties`. 
