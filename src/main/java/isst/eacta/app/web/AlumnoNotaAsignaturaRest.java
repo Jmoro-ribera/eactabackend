@@ -79,8 +79,8 @@ public class AlumnoNotaAsignaturaRest {
 		Asignaturas asig = asigRepo.findById(asigId).orElse(null); 
 		AlumnoNotaAsignatura oldNota = notasRepo.findNota(user, asig);
 	 oldNota.setNota(newNota.getNota());
-	 final AlumnoNotaAsignatura updatedNota = notasRepo.save(oldNota);
-	 return ResponseEntity.ok(updatedNota);
+	 //final AlumnoNotaAsignatura updatedNota = notasRepo.save(oldNota);
+	 //return ResponseEntity.ok(updatedNota);
 	}*/
 	
 	@PutMapping("/put/alumno/{idAlumno}/{idAsignatura}/{nota}")
