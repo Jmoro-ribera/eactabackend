@@ -19,7 +19,7 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 ## Direcciones
 
-**Recordatorio 1**: los **{}**, indican donde teneis que poner la información, cuando paséis la dirección.
+**Recordatorio 1**: los **{}**, indican donde teneis que poner la información, cuando paséis la dirección.<br/>
 **Recordatorio 2**: estas direcciones son si se arranca con Tomcat, si se arranca con java application quitad `/app` de las direcciones 
 ### Usuarios
 
