@@ -19,12 +19,12 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 ## Direcciones
 
-**Recordatorio**: los **{}**, indica donde teneis que poner la información, cuando paséis la dirección.
+**Recordatorio**: los **{}**, indican donde teneis que poner la información, cuando paséis la dirección.
 
 ### Usuarios
 
 * `/api/usuarios/`: Como petición **GET**, devuelve todos los usuarios.
-* `/api/usuarios/email/{email}`: Devuelve el usuario que tenga ese correo electrónico.
+* `/api/usuarios/email/{email}`: Como petición **GET**, devuelve el usuario que tenga ese correo electrónico.
 * `/api/usuarios/{id}`: Como petición **GET**, devuelve el usuario con ese id.
 * `/api/usuarios/`: Como petición **POST**, sube un usuario a la BBDD.
 * `/api/usuarios/{id}`: Como petición **PUT**, cambia los datos del usuario que tenga ese id en la BBDD.
@@ -58,9 +58,9 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 * `/api/notas/`: Como petición **GET**, devuelve todas las notas.
 * `/api/notas/{id}`: Como petición **GET**, devuelve la nota que tenga ese id.
-* `/api/notas/alumnos/{usuario}`: Devuelve las notas de un alumno que tenga ese id.
-* `/api/notas/asignaturas/{asignatura}`: Devuelve las notas de una asignatura que tenga ese id.
-* `/api/notas/get/alumno/{idAlumno}/{idAsignatura}`: Devuelve la nota del alumno que tenga ese id, de la asignatura que tenga ese id.
+* `/api/notas/alumnos/{usuario}`: Como petición **GET**, devuelve las notas de un alumno que tenga ese id.
+* `/api/notas/asignaturas/{asignatura}`: Como petición **GET**, devuelve las notas de una asignatura que tenga ese id.
+* `/api/notas/get/alumno/{idAlumno}/{idAsignatura}`: Como petición **GET**, devuelve la nota del alumno que tenga ese id, de la asignatura que tenga ese id.
 * `/api/notas/`: Como petición **POST**, sube una nota a la BBDD.
 * `/api/notas/put/alumno/{idAlumno}/{idAsignatura}/{nota}`: Como petición **PUT**, cambia los datos de la nota que tenga ese id de alumnos, ese id de asignatura, por la nota que pone en la dirección en la BBDD.
 * `/api/notas/{id}`: Como petición **DELETE**, borra la nota que tenga ese id en la BBDD.
