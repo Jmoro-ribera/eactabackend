@@ -35,7 +35,9 @@ public class Usuario {
 
     private String email;
     
-    private String password;    
+    private String password;
+    
+    //private Boolean login;
     
 	  @ManyToOne(optional = true, fetch = FetchType.EAGER) 
 	  @JoinColumn(name = "ROL_ID") 

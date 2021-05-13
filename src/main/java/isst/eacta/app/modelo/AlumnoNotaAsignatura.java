@@ -22,7 +22,8 @@ public class AlumnoNotaAsignatura {
     @ManyToOne
     @JoinColumn(name = "ASIGNATURA_ID")
     private Asignaturas asignatura;
-
+    
+    @Column(name = "NOTA", nullable = true )
     private Double nota;
 
     public AlumnoNotaAsignatura(){}
