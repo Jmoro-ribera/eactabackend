@@ -70,5 +70,5 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 ### Email
 
-* ´/app/api/email/sendMail´: Endpoint para enviar un único correo electrónico.
-* ´/app/api/email/sendAllMails´: Endpoint para enviar un conjunto de correos electrónicos.
+* `/app/api/email/sendMail`: Endpoint para enviar un único correo electrónico.
+* `/app/api/email/sendAllMails`: Endpoint para enviar un conjunto de correos electrónicos.
