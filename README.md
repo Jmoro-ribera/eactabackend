@@ -12,6 +12,9 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 **Seguid los siguientes pasos:**
 
+1. **Para poder cargar los datos tenéis que borrar la bbdd y luego descomentar lo que esta en: isst.eacta.app.EactaApplication.java**<br/>
+**Teneis que hacerlo solo la primera vez porque la bbdd es persisitente asi que una vez la lancéis por primera vez lo volvéis a comentar para que no de errores.**<br/>
+**Seguid estas instrucciones para la anterior versión de la bbdd.**
 1. Tenéis que sacar la carpeta de ahí y colocarla dónde creáis conveniente.
 1. **Cambiad** la dirección de la carpeta en `src/main/resources/aplication.properties`. 
 
@@ -64,3 +67,8 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 * `/app/api/notas/`: Como petición **POST**, sube una nota a la BBDD.
 * `/app/api/notas/put/alumno/{idAlumno}/{idAsignatura}/{nota}`: Como petición **PUT**, cambia los datos de la nota que tenga ese id de alumnos, ese id de asignatura, por la nota que pone en la dirección en la BBDD.
 * `/app/api/notas/{id}`: Como petición **DELETE**, borra la nota que tenga ese id en la BBDD.
+
+### Email
+
+* ´/app/api/email/sendMail´: Endpoint para enviar un único correo electrónico.
+* ´/app/api/email/sendAllMails´: Endpoint para enviar un conjunto de correos electrónicos.
