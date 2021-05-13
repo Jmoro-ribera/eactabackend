@@ -34,7 +34,7 @@ public class EactaApplication {
 
 }
 
-
+/*
 
 @Component
 @Transactional
@@ -200,6 +200,6 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		
 	}
 }
-
+*/
 
 
