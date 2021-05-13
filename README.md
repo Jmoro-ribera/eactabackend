@@ -14,7 +14,7 @@ La carpeta con los datos de la base de datos se encuentran en `src/main/resource
 
 1. **Para poder cargar los datos tenéis que borrar la bbdd y luego descomentar lo que esta en: isst.eacta.app.EactaApplication.java**<br/>
 **Teneis que hacerlo solo la primera vez porque la bbdd es persisitente asi que una vez la lancéis por primera vez lo volvéis a comentar para que no de errores.**<br/>
-**Seguid estas instrucciones para la anterior versión de la bbdd.**
+**Seguid las instrucciones de abajo para la anterior versión de la bbdd:**
 1. Tenéis que sacar la carpeta de ahí y colocarla dónde creáis conveniente.
 1. **Cambiad** la dirección de la carpeta en `src/main/resources/aplication.properties`. 
 
