@@ -47,7 +47,7 @@ public class PdfConverter {
         contentStream.endText();
         contentStream.close();
 
-        document.save("Attachment.pdf");
+        document.save("src/main/resources/attachment.pdf");
         document.close();
         
 	}

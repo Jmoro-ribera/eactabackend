@@ -87,7 +87,7 @@ public class MailService {
 		helper.setSubject("Expediente académico");
 		helper.setText("En este correo se le ha adjuntado su expediente académico con sus calificaciones");
 
-		ClassPathResource classPathResource = new ClassPathResource("Attachment.pdf");
+		ClassPathResource classPathResource = new ClassPathResource("attachment.pdf");
 		helper.addAttachment(classPathResource.getFilename(), classPathResource);
 
 		javaMailSender.send(mimeMessage);
