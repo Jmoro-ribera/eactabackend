@@ -114,16 +114,25 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		Asignaturas asig1 = new Asignaturas();
 		asig1.setNombreAsignaturas("Ingeniería de Servicios y Sistemas Telemáticos");
 		asig1.setSiglas("ISST");
+		asig1.setFirmado1(null);
+		asig1.setFirmado2(null);
+		asig1.setFirmado3(null);
 		asigRepo.save(asig1);
 		
 		Asignaturas asig2 = new Asignaturas();
 		asig2.setNombreAsignaturas("Redes de Comunicaciones Móviles");
 		asig2.setSiglas("RCMO");
+		asig2.setFirmado1(null);
+		asig2.setFirmado2(null);
+		asig2.setFirmado3(null);
 		asigRepo.save(asig2);
 		
 		Asignaturas asig3 = new Asignaturas();
 		asig3.setNombreAsignaturas("Redes y Servicios de Radio");
 		asig3.setSiglas("RSRD");
+		asig3.setFirmado1(null);
+		asig3.setFirmado2(null);
+		asig3.setFirmado3(null);
 		asigRepo.save(asig3);
 		
 		// Usuarios
@@ -199,7 +208,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		notasRepo.save(nota3);
 		
 	}
-}
-*/
+}*/
+
 
 

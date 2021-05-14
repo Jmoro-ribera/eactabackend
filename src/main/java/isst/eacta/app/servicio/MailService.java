@@ -1,17 +1,22 @@
 package isst.eacta.app.servicio;
 
+import isst.eacta.app.PdfConverter;
+
 import java.util.List;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Service
 public class MailService {
@@ -68,5 +73,24 @@ public class MailService {
         }
     }
 	
+	public void sendEmailWithAttachment(ObjectNode jsonToPdf, String email) throws MailException, MessagingException, Exception {
+		
+		PdfConverter pdfConverter = new PdfConverter();
+		
+		pdfConverter.jsonToPdf(jsonToPdf);
+		
+		MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+		
+		MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+
+		helper.setTo(email);
+		helper.setSubject("Expediente académico");
+		helper.setText("En este correo se le ha adjuntado su expediente académico con sus calificaciones");
+
+		ClassPathResource classPathResource = new ClassPathResource("Attachment.pdf");
+		helper.addAttachment(classPathResource.getFilename(), classPathResource);
+
+		javaMailSender.send(mimeMessage);
+	}
 	
 }

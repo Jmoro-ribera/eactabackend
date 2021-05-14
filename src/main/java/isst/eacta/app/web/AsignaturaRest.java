@@ -38,12 +38,33 @@ public class AsignaturaRest {
         asigRepo.save(asignaturas);
     }
 	
-	@PutMapping("/{id}")
+	@PutMapping("/{id}") // Actualiza la firma
 	public ResponseEntity<Asignaturas> updateAsignatura(@PathVariable(value = "id") Long asigId,
-	  @Valid @RequestBody Asignaturas newasig) throws ResourceNotFoundException {
+	  @Valid @RequestBody List<Integer> newasig) throws ResourceNotFoundException {
 		Asignaturas oldasig = asigRepo.findById(asigId)
 	 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + asigId));
-	 oldasig.setNombreAsignaturas(newasig.getNombreAsignaturas());
+	 int size = newasig.size();
+	 switch(size){
+	    case 1 :
+	    	oldasig.setFirmado1(newasig.get(0));
+	        break;
+	    
+	    case 2 :
+	    	oldasig.setFirmado1(newasig.get(0));
+	    	oldasig.setFirmado2(newasig.get(1));
+	       break;
+	    
+	    case 3 :
+	    	oldasig.setFirmado1(newasig.get(0));
+	    	oldasig.setFirmado2(newasig.get(1));
+	    	oldasig.setFirmado3(newasig.get(2));	    	
+	       break;   
+	
+	    default :
+	    	oldasig.setFirmado1(null);
+	    	oldasig.setFirmado2(null);
+	    	oldasig.setFirmado3(null);	      
+	 }
 	 final Asignaturas updatedAsig = asigRepo.save(oldasig);
 	 return ResponseEntity.ok(updatedAsig);
 	}

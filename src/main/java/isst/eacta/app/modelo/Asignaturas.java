@@ -2,6 +2,7 @@ package isst.eacta.app.modelo;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,12 @@ public class Asignaturas {
     private String siglas;
     
     private String nombreAsignaturas;
+    
+    private Integer firmado1;
+    
+    private Integer firmado2;
+    
+    private Integer firmado3;
     
     @JsonBackReference
     @ManyToMany(mappedBy = "asignaturas")
@@ -74,8 +81,30 @@ public class Asignaturas {
 	public void setSiglas(String siglas) {
 		this.siglas = siglas;
 	}
- 
-    
+
+	public Integer getFirmado1() {
+		return firmado1;
+	}
+
+	public void setFirmado1(Integer firmado1) {
+		this.firmado1 = firmado1;
+	}
+
+	public Integer getFirmado2() {
+		return firmado2;
+	}
+
+	public void setFirmado2(Integer firmado2) {
+		this.firmado2 = firmado2;
+	}
+
+	public Integer getFirmado3() {
+		return firmado3;
+	}
+
+	public void setFirmado3(Integer firmado3) {
+		this.firmado3 = firmado3;
+	}
     
 }
 

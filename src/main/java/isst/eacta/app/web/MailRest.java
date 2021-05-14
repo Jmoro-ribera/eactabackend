@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,5 +50,16 @@ public class MailRest {
 			System.out.println(mailException);
 		}
 	}
+	
+	@RequestMapping("/sendGrades/{email}")
+	public void sendGrades(@RequestBody @Valid ObjectNode attachment, @PathVariable String email)
+			throws Exception{
+		try {
+			notificationService.sendEmailWithAttachment(attachment, email);
+		} catch (MailException mailException) {
+			System.out.println(mailException);
+		}
+	}
+	
 
 }
