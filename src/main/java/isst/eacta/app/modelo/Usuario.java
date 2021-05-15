@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -37,9 +38,12 @@ public class Usuario {
     
     private String password;
     
-    //private Boolean login;
+    @Lob
+    private Byte[] userImage;
     
-	  @ManyToOne(optional = true, fetch = FetchType.EAGER) 
+    //private Boolean login;
+   
+	@ManyToOne(optional = true, fetch = FetchType.EAGER) 
 	  @JoinColumn(name = "ROL_ID") 
 	  private Rol idRol;
     //private int idRol;
@@ -130,9 +134,14 @@ public class Usuario {
 	public void setAlumnoNotaAsignatura(List<AlumnoNotaAsignatura> alumnoNotaAsignatura) {
 		this.alumnoNotaAsignatura = alumnoNotaAsignatura;
 	}
-
 	
+	  public Byte[] getUserImage() {
+		return userImage;
+	}
 
+	public void setUserImage(Byte[] userImage) {
+		this.userImage = userImage;
+	}
     
 }
 

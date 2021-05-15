@@ -1,5 +1,7 @@
 package isst.eacta.app;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import isst.eacta.app.modelo.AlumnoNotaAsignatura;
 import isst.eacta.app.modelo.Asignaturas;
@@ -24,6 +28,7 @@ import isst.eacta.app.repositorio.AsignaturasRepo;
 import isst.eacta.app.repositorio.FuncionalidadRepo;
 import isst.eacta.app.repositorio.RolRepo;
 import isst.eacta.app.repositorio.UsuarioRepo;
+import isst.eacta.app.servicio.ImageService;
 
 @SpringBootApplication
 public class EactaApplication {
@@ -33,8 +38,6 @@ public class EactaApplication {
 	}
 
 }
-
-/*
 
 @Component
 @Transactional
@@ -117,6 +120,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig1.setFirmado1(null);
 		asig1.setFirmado2(null);
 		asig1.setFirmado3(null);
+		asig1.setAsigImage(null);
 		asigRepo.save(asig1);
 		
 		Asignaturas asig2 = new Asignaturas();
@@ -125,6 +129,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig2.setFirmado1(null);
 		asig2.setFirmado2(null);
 		asig2.setFirmado3(null);
+		asig2.setAsigImage(null);
 		asigRepo.save(asig2);
 		
 		Asignaturas asig3 = new Asignaturas();
@@ -133,6 +138,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig3.setFirmado1(null);
 		asig3.setFirmado2(null);
 		asig3.setFirmado3(null);
+		asig3.setAsigImage(null);
 		asigRepo.save(asig3);
 		
 		// Usuarios
@@ -143,6 +149,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user1.setPassword("JavierM98");
 		user1.setEmail("javier.morori@alumnos.upm.es");
 		user1.setIdRol(rol1);
+		user1.setUserImage(null);
 		userRepo.save(user1);
 		
 		Usuario user2 = new Usuario();
@@ -153,6 +160,10 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user2.setIdRol(rol2);
 		user2.addAsignaturas(asig1);
 		user2.addAsignaturas(asig2);
+		user2.setUserImage(null);
+		//ClassPathResource cPR1 = new ClassPathResource("attachment.pdf");
+		//byte[] user2img = Files.readAllBytes(cPR1.getFile().toPath());
+		//user2.setUserImage(user2img);
 		userRepo.save(user2);
 		
 		Usuario user3 = new Usuario();
@@ -163,6 +174,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user3.setIdRol(rol2);
 		user3.addAsignaturas(asig1);
 		user3.addAsignaturas(asig3);
+		user3.setUserImage(null);
 		userRepo.save(user3);
 		
 		Usuario user4 = new Usuario();
@@ -171,6 +183,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user4.setPassword("PabloC98");
 		user4.setEmail("pablo.chico@alumnos.upm.es");
 		user4.setIdRol(rol1);
+		user4.setUserImage(null);
 		userRepo.save(user4);
 		
 		//EntityManager em2 = emf.createEntityManager();
@@ -208,7 +221,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		notasRepo.save(nota3);
 		
 	}
-}*/
+}
 
 
 

@@ -2,12 +2,14 @@ package isst.eacta.app.web;
 
 import isst.eacta.app.modelo.Asignaturas;
 import isst.eacta.app.repositorio.AsignaturasRepo;
+import isst.eacta.app.servicio.ImageService;
 
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +23,9 @@ public class AsignaturaRest {
 	
 	@Autowired
 	private AsignaturasRepo asigRepo;
+	
+	@Autowired
+	private ImageService imageService;
 	
 	@GetMapping
 	public ResponseEntity<List<Asignaturas>> getAllAsignaturas() {
@@ -67,6 +72,14 @@ public class AsignaturaRest {
 	 }
 	 final Asignaturas updatedAsig = asigRepo.save(oldasig);
 	 return ResponseEntity.ok(updatedAsig);
+	}
+	
+	@PostMapping("/{id}/image")
+	public String handleImagePost(@PathVariable String id, @RequestParam("imagefile") MultipartFile file){
+		String type = "asignatura";
+	    imageService.saveImageFile(type, Long.valueOf(id), file);
+
+	    return "redirect:/recipe/" + id + "/show";
 	}
 
     @DeleteMapping("/{id}")

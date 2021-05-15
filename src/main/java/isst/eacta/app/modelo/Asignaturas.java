@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -32,7 +33,10 @@ public class Asignaturas {
     
     private Integer firmado3;
     
-    @JsonBackReference
+    @Lob
+    private Byte[] asigImage;
+   
+	@JsonBackReference
     @ManyToMany(mappedBy = "asignaturas")
     private List<Usuario> usuarios;
     
@@ -105,6 +109,15 @@ public class Asignaturas {
 	public void setFirmado3(Integer firmado3) {
 		this.firmado3 = firmado3;
 	}
+	
+    public Byte[] getAsigImage() {
+		return asigImage;
+	}
+
+	public void setAsigImage(Byte[] asigImage) {
+		this.asigImage = asigImage;
+	}
+
     
 }
 
