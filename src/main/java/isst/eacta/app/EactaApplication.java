@@ -213,9 +213,9 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user2.addAsignaturas(asig1);
 		user2.addAsignaturas(asig2);
 		user2.addAsignaturas(asig8);
-		user1.addAsignaturas(asig7);
-		user1.addAsignaturas(asig5);
-		user1.addAsignaturas(asig3);
+		user2.addAsignaturas(asig7);
+		user2.addAsignaturas(asig5);
+		user2.addAsignaturas(asig3);
 		user2.setUserImage(null);
 		//ClassPathResource cPR1 = new ClassPathResource("attachment.pdf");
 		//byte[] user2img = Files.readAllBytes(cPR1.getFile().toPath());
@@ -231,9 +231,9 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user3.addAsignaturas(asig1);
 		user3.addAsignaturas(asig3);
 		user3.addAsignaturas(asig6);
-		user1.addAsignaturas(asig4);
-		user1.addAsignaturas(asig5);
-		user1.addAsignaturas(asig7);
+		user3.addAsignaturas(asig4);
+		user3.addAsignaturas(asig5);
+		user3.addAsignaturas(asig7);
 		user3.setUserImage(null);
 		userRepo.save(user3);
 		
@@ -246,9 +246,9 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		user4.addAsignaturas(asig4);
 		user4.addAsignaturas(asig2);
 		user4.addAsignaturas(asig7);
-		user1.addAsignaturas(asig8);
-		user1.addAsignaturas(asig1);
-		user1.addAsignaturas(asig6);
+		user4.addAsignaturas(asig8);
+		user4.addAsignaturas(asig1);
+		user4.addAsignaturas(asig6);
 		user4.setUserImage(null);
 		userRepo.save(user4);
 		
