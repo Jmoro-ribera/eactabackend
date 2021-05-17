@@ -13,6 +13,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.util.List;
@@ -53,9 +54,11 @@ public class PdfConverter {
         }
         contentStream.endText();
         contentStream.close();
-
-        document.save("C:\\Users\\javic\\Desktop\\POLI_UPM\\ECLIPSEWEB\\app.zip_expanded\\app\\src\\main\\resources\\attachment.pdf ");
+        ClassPathResource classPathResource = new ClassPathResource("attachment.pdf");
+        System.out.println(classPathResource.getPath());
+        document.save(classPathResource.getFile());
         document.close();
+       
         
 	}
 	
