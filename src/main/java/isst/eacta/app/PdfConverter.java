@@ -47,7 +47,13 @@ public class PdfConverter {
         contentStream.setLeading(14.5f);
         contentStream.newLineAtOffset(25, 725);
         for (int i = 0; i < jp.size(); i+=2) {
+        	if(i == 0) {
+        		contentStream.showText("Expediente de " + jp.get(i) + " " + jp.get(i+1) );
+                contentStream.newLine();
+        	}else {
             contentStream.showText(jp.get(i) + ": " + jp.get(i+1));
+            }
+        	
             // add line manually
             contentStream.newLine();
             contentStream.newLine();

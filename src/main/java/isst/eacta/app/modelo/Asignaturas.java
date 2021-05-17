@@ -33,6 +33,8 @@ public class Asignaturas {
     
     private Integer firmado3;
     
+    private Boolean subidas;
+    
     @Lob
     private Byte[] asigImage;
    
@@ -116,6 +118,14 @@ public class Asignaturas {
 
 	public void setAsigImage(Byte[] asigImage) {
 		this.asigImage = asigImage;
+	}
+
+	public Boolean getSubidas() {
+		return subidas;
+	}
+
+	public void setSubidas(Boolean subidas) {
+		this.subidas = subidas;
 	}
 
     

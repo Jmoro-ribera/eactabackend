@@ -1,6 +1,7 @@
 package isst.eacta.app.web;
 
 import isst.eacta.app.modelo.Asignaturas;
+import isst.eacta.app.modelo.Usuario;
 import isst.eacta.app.repositorio.AsignaturasRepo;
 import isst.eacta.app.servicio.ImageService;
 
@@ -71,6 +72,15 @@ public class AsignaturaRest {
 	    	oldasig.setFirmado3(null);	      
 	 }
 	 final Asignaturas updatedAsig = asigRepo.save(oldasig);
+	 return ResponseEntity.ok(updatedAsig);
+	}
+	
+	@PutMapping("/subidas/{id}")
+	public ResponseEntity<Asignaturas> updateAsig2(@PathVariable(value = "id") Long asigId) throws ResourceNotFoundException {
+	 Asignaturas oldAsig = asigRepo.findById(asigId)
+	 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + asigId));
+	 oldAsig.setSubidas(true);
+	 final Asignaturas updatedAsig = asigRepo.save(oldAsig);
 	 return ResponseEntity.ok(updatedAsig);
 	}
 	

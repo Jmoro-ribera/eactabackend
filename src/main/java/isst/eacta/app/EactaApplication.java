@@ -39,7 +39,7 @@ public class EactaApplication {
 
 }
 
-/*
+
 @Component
 @Transactional
 class DemoCommandLineRunner implements CommandLineRunner{
@@ -122,6 +122,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig1.setFirmado2(null);
 		asig1.setFirmado3(null);
 		asig1.setAsigImage(null);
+		asig1.setSubidas(false);
 		asigRepo.save(asig1);
 		
 		Asignaturas asig2 = new Asignaturas();
@@ -131,6 +132,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig2.setFirmado2(null);
 		asig2.setFirmado3(null);
 		asig2.setAsigImage(null);
+		asig2.setSubidas(false);
 		asigRepo.save(asig2);
 		
 		Asignaturas asig3 = new Asignaturas();
@@ -140,6 +142,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig3.setFirmado2(null);
 		asig3.setFirmado3(null);
 		asig3.setAsigImage(null);
+		asig3.setSubidas(false);
 		asigRepo.save(asig3);
 		
 		Asignaturas asig4 = new Asignaturas();
@@ -149,6 +152,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig4.setFirmado2(null);
 		asig4.setFirmado3(null);
 		asig4.setAsigImage(null);
+		asig4.setSubidas(false);
 		asigRepo.save(asig4);
 		
 		Asignaturas asig5 = new Asignaturas();
@@ -158,6 +162,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig5.setFirmado2(null);
 		asig5.setFirmado3(null);
 		asig5.setAsigImage(null);
+		asig5.setSubidas(false);
 		asigRepo.save(asig5);
 		
 		Asignaturas asig6 = new Asignaturas();
@@ -167,6 +172,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig6.setFirmado2(null);
 		asig6.setFirmado3(null);
 		asig6.setAsigImage(null);
+		asig6.setSubidas(false);
 		asigRepo.save(asig6);
 		
 		Asignaturas asig7 = new Asignaturas();
@@ -176,6 +182,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig7.setFirmado2(null);
 		asig7.setFirmado3(null);
 		asig7.setAsigImage(null);
+		asig7.setSubidas(false);
 		asigRepo.save(asig7);
 		
 		Asignaturas asig8 = new Asignaturas();
@@ -185,6 +192,7 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		asig8.setFirmado2(null);
 		asig8.setFirmado3(null);
 		asig8.setAsigImage(null);
+		asig8.setSubidas(false);
 		asigRepo.save(asig8);
 		
 		// Usuarios
@@ -634,5 +642,3 @@ class DemoCommandLineRunner implements CommandLineRunner{
 		
 	}
 }
-
-*/
