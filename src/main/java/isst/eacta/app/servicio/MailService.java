@@ -1,8 +1,10 @@
 package isst.eacta.app.servicio;
 
 import isst.eacta.app.PdfConverter;
+import isst.eacta.app.modelo.AlumnoNotaAsignatura;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -73,10 +75,9 @@ public class MailService {
         }
     }
 	
-	public void sendEmailWithAttachment(ObjectNode jsonToPdf, String email) throws MailException, MessagingException, Exception {
+	public void sendEmailWithAttachment(List<String> jsonToPdf, String email) throws MailException, MessagingException, Exception {
 		
 		PdfConverter pdfConverter = new PdfConverter();
-		
 		pdfConverter.jsonToPdf(jsonToPdf);
 		
 		MimeMessage mimeMessage = javaMailSender.createMimeMessage();

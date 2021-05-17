@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import isst.eacta.app.modelo.AlumnoNotaAsignatura;
 import isst.eacta.app.servicio.MailService;
 
 
@@ -52,7 +53,7 @@ public class MailRest {
 	}
 	
 	@RequestMapping("/sendGrades/{email}")
-	public void sendGrades(@RequestBody @Valid ObjectNode attachment, @PathVariable String email)
+	public void sendGrades(@RequestBody List<String> attachment, @PathVariable String email)
 			throws Exception{
 		try {
 			notificationService.sendEmailWithAttachment(attachment, email);
